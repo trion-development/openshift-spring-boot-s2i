@@ -78,7 +78,8 @@ fi
 # Restore artifacts from the previous build (if they exist).
 if [ "$(ls /tmp/artifacts/ 2>/dev/null)" ]; then
   echo "---> Restoring build artifacts"
-  mv /tmp/artifacts/. ./
+  ls -l /tmp/artifacts
+  mv /tmp/artifacts/* .
 fi
 
 echo "---> Starting Java web application build process ..."
