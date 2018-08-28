@@ -83,10 +83,13 @@ Create the S2I builder image and push it to the integrated docker registry for t
 oc new-build --strategy=docker --name=spring-boot https://github.com/trion-development/openshift-spring-boot-s2i.git
 ```
 
+It can now be used for a build
+
+```
 oc new-build spring-boot~https://github.com/trion-development/spring-boot-rest-sample.git
+```
 
-
-Upload the template to the current project:
+To be able to use it for creating deployment through the UI upload the template to the current project:
 
 ```
 curl -Ssl https://raw.githubusercontent.com/trion-development/openshift-spring-boot-s2i/master/spring-boot-s2i.json | oc create -f -
