@@ -28,9 +28,10 @@ execute_maven_build()
   # to the $DEPLOY_DIR directory for later deployment
   cp -v $HOME/target/*.* $DEPLOY_DIR 2> /dev/null
 
-  # Clean up after Maven run ....
-  mvn clean
+  # Clean up after Maven run
+  mvn clean -Dmaven.repo.local=/opt/app-root/src/maven-cache
 
+  # TODO: This is the contrary of incremental build. Using a different cache dir
   if [ -d "$HOME/.m2/repository" ]; then
     rm -rf $HOME/.m2/repository
   fi
@@ -78,7 +79,6 @@ fi
 # Restore artifacts from the previous build (if they exist).
 if [ "$(ls /tmp/artifacts/ 2>/dev/null)" ]; then
   echo "---> Restoring build artifacts"
-  ls -l /tmp/artifacts
   mv /tmp/artifacts/* .
 fi
 
