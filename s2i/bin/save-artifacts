@@ -7,4 +7,9 @@
 # For more information see the documentation:
 #	https://github.com/openshift/source-to-image/blob/master/docs/builder_image.md
 #
-# tar cf - <list of files and folders>
+# Tar up maven repository for reuse in an incremental build
+if [ -d "/opt/app-root/src/.m2" ]; then
+   cd /opt/app-root/src
+   tar cf - .m2
+   cd -
+fi

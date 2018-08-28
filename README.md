@@ -11,7 +11,7 @@ The following tables describes the files used in this image.
 | s2i/bin/run            | Yes       | Script that runs the application                             |
 | s2i/bin/save-artifacts | No        | Script for incremental builds that saves the built artifacts |
 | test/run               | No        | Test script for the builder image                            |
-| test/test-app          | Yes       | Test application source code                                 |
+| test/test-app          | No       | Test application source code                                 |
 
 ### Dockerfile
 Builds the builder image itself, installing Maven and Gradle and using OpenJDK as base image.
