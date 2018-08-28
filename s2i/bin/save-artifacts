@@ -8,8 +8,8 @@
 #	https://github.com/openshift/source-to-image/blob/master/docs/builder_image.md
 #
 # Tar up maven repository for reuse in an incremental build
-if [ -d "/opt/app-root/src/.m2" ]; then
+if [ -d "/opt/app-root/src/maven-cache" ]; then
    cd /opt/app-root/src
-   tar cf - .m2
+   tar cf - maven-cache
    cd -
 fi

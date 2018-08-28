@@ -10,7 +10,7 @@ execute_maven_build()
 {
   echo "---> Building application using Maven ..."
 
-  MAVEN_ARGS="package -DskipTests ${MAVEN_ARGS_APPEND}"
+  MAVEN_ARGS="package -Dmaven.repo.local=/opt/app-root/src/maven-cache -DskipTests ${MAVEN_ARGS_APPEND}"
   echo "---> Found pom.xml.  Attempting to build with 'mvn ${MAVEN_ARGS}'"
 
   echo "---> Using $(mvn --version)"
