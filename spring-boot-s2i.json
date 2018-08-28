@@ -113,7 +113,7 @@
               "kind": "ImageStreamTag",
               "name": "spring-boot:latest"
             },
-            "incremental": "true",
+            "incremental": true,
             "env": [ {
               "name": "BUILD_TYPE",
               "value": "${BUILD_TYPE}"
