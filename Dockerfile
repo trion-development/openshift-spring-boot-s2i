@@ -23,7 +23,7 @@ CMD ["/usr/libexec/s2i/usage"]
 COPY ./s2i/bin/ /usr/libexec/s2i
 
 RUN apt-get update && \
-   apt-get -y install curl && \
+   apt-get -y install curl unzip && \
    apt-get clean && apt-get autoclean && \
    rm -rf /tmp/* /var/tmp/* && \
    rm -rf /var/lib/apt/lists/* && \
